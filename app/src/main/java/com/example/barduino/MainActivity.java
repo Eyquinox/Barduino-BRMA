@@ -38,6 +38,7 @@ public class MainActivity extends Activity {
         final BottleList bottleList= new BottleList(bottles);
 
         final ArrayList<Drink> drinks = new ArrayList<Drink>();
+        // TODO : Limiter à 4 le nombre de boutielles
         drinks.add(new Drink("Bloody mary",new String[]{"vodka", "tomato juice", "lemon juice"},new Double[]{4.5,9.0,1.5},R.drawable.cocktail));
         drinks.add(new Drink("Cocktail",new String[]{"orange", "pomme", "raisin"}, new Double[]{5.0,3.0,4.0},R.drawable.cocktail1));
         drinks.add(new Drink("Jus d'orange",new String[]{"orange"}, new Double[]{100.},R.drawable.cocktail2));
