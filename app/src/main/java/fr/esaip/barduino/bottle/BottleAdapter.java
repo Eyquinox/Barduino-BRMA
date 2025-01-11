@@ -1,4 +1,4 @@
-package com.example.barduino.bottle;
+package fr.esaip.barduino.bottle;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import com.example.barduino.R;
+import fr.esaip.barduino.R;
 
 public class BottleAdapter extends BaseAdapter{
     private BottleList listBottle;

@@ -1,4 +1,4 @@
-package com.example.barduino.drink;
+package fr.esaip.barduino.drink;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

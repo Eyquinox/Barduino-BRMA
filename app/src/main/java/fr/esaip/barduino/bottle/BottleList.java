@@ -1,4 +1,4 @@
-package com.example.barduino.bottle;
+package fr.esaip.barduino.bottle;
 
 import java.util.ArrayList;
 

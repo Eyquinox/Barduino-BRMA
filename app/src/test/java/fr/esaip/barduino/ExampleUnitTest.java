@@ -1,4 +1,4 @@
-package com.example.barduino;
+package fr.esaip.barduino;
 
 import org.junit.Test;
 

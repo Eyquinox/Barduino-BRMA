@@ -1,4 +1,4 @@
-package com.example.barduino.drink;
+package fr.esaip.barduino.drink;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,9 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.barduino.R;
-
 import java.util.ArrayList;
+
+import fr.esaip.barduino.R;
 
 public class DrinkAdapter extends BaseAdapter {
 

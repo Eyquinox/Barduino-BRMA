@@ -1,20 +1,14 @@
-package com.example.barduino.bottle;
+package fr.esaip.barduino.bottle;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.example.barduino.R;
 import com.google.gson.Gson;
-
-
-import java.util.ArrayList;
+import fr.esaip.barduino.R;
 
 
 public class BottleView extends Activity{

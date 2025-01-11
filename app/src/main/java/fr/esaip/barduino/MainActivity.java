@@ -1,4 +1,4 @@
-package com.example.barduino;
+package fr.esaip.barduino;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,23 +9,46 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothSocket;
 
-import com.example.barduino.bottle.Bottle;
-import com.example.barduino.bottle.BottleList;
-import com.example.barduino.drink.Drink;
-import com.example.barduino.drink.DrinkAdapter;
+import fr.esaip.barduino.bottle.Bottle;
+import fr.esaip.barduino.bottle.BottleList;
+import fr.esaip.barduino.drink.Drink;
+import fr.esaip.barduino.drink.DrinkAdapter;
+
 import com.google.gson.Gson;
 
+import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.UUID;
 
 import static android.content.ContentValues.TAG;
 
 public class MainActivity extends Activity {
 
+    private BluetoothAdapter bluetoothAdapter;
+    private BluetoothSocket bluetoothSocket;
+    private OutputStream outputStream;
+
+    private final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); // Standard UUID used for serial Bluetooth communications
+    private final String DEVICE_ADDRESS = "00:11:22:33:44:55"; // Replace with the MAC address of your Bluetooth device
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Init Bluetooth
+        bluetoothAdapter =  BluetoothAdapter.getDefaultAdapter();
+        if (bluetoothAdapter == null) {
+            Toast.makeText(this, "Bluetooth is not available", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
+        // Connect to Bluetooth device
+        //connectToBluetoothDevice();
 
         // TODO: remove manual object creation used for testing purposes
         ArrayList<Bottle> bottles = new ArrayList<Bottle>();

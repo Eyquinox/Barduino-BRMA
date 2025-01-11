@@ -1,4 +1,4 @@
-package com.example.barduino.bottle;
+package fr.esaip.barduino.bottle;
 
 
 public class Bottle {
