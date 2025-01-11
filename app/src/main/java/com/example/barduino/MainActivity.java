@@ -56,7 +56,20 @@ public class MainActivity extends Activity {
                 Log.d(TAG, "onItemClick: drink: " + drinks.get(position).getName());
                 Toast.makeText(MainActivity.this, drinks.get(position).getName(), Toast.LENGTH_SHORT).show();
                 // TODO : Send the drink to the arduino
+                // 1. Get item_id and nb_sec from drink.
 
+
+                // 2. Build array.
+                // {[1,2,3], [5.0,3.0,4.0]}
+                // 2. Send array to arduino.
+
+
+
+                // Côté adruino :
+                // Boucle For compteur = nb item dans l'arrey
+                // Pour chaque items, se déplacer à la position X de l'item
+                // Soulever le verre pendant x secondes
+                // Passer à l'item suivant | Rejoindre la position home
             }
         });
 
