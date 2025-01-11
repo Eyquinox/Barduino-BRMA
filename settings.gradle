@@ -1,0 +1,11 @@
+// settings.gradle
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS) // Empêche l'utilisation des repos définis dans build.gradle
+    repositories {
+        google() // Détaille les dépôts ici
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'Barduino'
+include ':app'
