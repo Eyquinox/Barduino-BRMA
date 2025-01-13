@@ -57,7 +57,6 @@ public class MainActivity extends Activity {
         bluetoothSocketManager = new BluetoothSocketManager(this);
 
         // Init Bluetooth
-        //bluetoothAdapter =  BluetoothAdapter.getDefaultAdapter();
         bluetoothManager.checkAndEnableBluetooth(REQUEST_ENABLE_BT_PERMISSION);
 
         // Connect to Bluetooth device
@@ -130,7 +129,7 @@ public class MainActivity extends Activity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_ENABLE_BT_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                bluetoothSocketManager.connectToDevice(bluetoothAdapter.getRemoteDevice(DEVICE_ADDRESS));
+                bluetoothSocketManager.connectToDevice(bluetoothAdapter.getRemoteDevice(DEVICE_ADDRESS), MY_UUID);
             } else {
                 Toast.makeText(this, "Permission refusée", Toast.LENGTH_SHORT).show();
             }

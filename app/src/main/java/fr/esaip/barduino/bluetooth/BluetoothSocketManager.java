@@ -21,7 +21,6 @@ import fr.esaip.barduino.drink.Drink;
 
 public class BluetoothSocketManager {
 
-    private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");  // Remplacez par un UUID unique
     private BluetoothSocket bluetoothSocket;
     private BluetoothDevice bluetoothDevice;
     private Context context;
@@ -32,10 +31,10 @@ public class BluetoothSocketManager {
     }
 
     // Connexion à un appareil Bluetooth via son BluetoothDevice
-    public void connectToDevice(BluetoothDevice device) {
+    public void connectToDevice(BluetoothDevice device, UUID uuid) {
         this.bluetoothDevice = device;
         try {
-            bluetoothSocket = device.createRfcommSocketToServiceRecord(MY_UUID);
+            bluetoothSocket = device.createRfcommSocketToServiceRecord(uuid);
             bluetoothSocket.connect();
             connectedThread = new ConnectedThread(bluetoothSocket);
             connectedThread.start();
