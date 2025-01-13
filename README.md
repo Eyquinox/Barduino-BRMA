@@ -23,7 +23,7 @@ With the app, users can select from a variety of predefined drink recipes, custo
 - [x] Modify bottle position
 - [ ] Adjust the proportions of ingredients in a recipe to suit your personal taste
 - [ ] Save your favorite recipes for easy access in the future
-- [ ] Connect to the Arduino via Bluetooth for seamless communication
+- [X] Connect to the Arduino via Bluetooth for seamless communication
 - [ ] View a real-time status update of the automated bar, including the current drink being prepared and the progress of the mixing process
 
 ## Project architecture
