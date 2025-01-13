@@ -1,20 +1,27 @@
 package fr.esaip.barduino.bluetooth;
 
+import static android.content.ContentValues.TAG;
+
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.widget.Toast;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.UUID;
+
+import fr.esaip.barduino.drink.Drink;
 
 public class BluetoothSocketManager {
 
-    private static final UUID MY_UUID = UUID.fromString("your-unique-uuid");  // Remplacez par un UUID unique
+    private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");  // Remplacez par un UUID unique
     private BluetoothSocket bluetoothSocket;
     private BluetoothDevice bluetoothDevice;
     private Context context;
@@ -34,7 +41,18 @@ public class BluetoothSocketManager {
             connectedThread.start();
             Toast.makeText(context, "Connecté à l'appareil", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
+            Log.e(TAG, "Erreur de connexion Bluetooth", e);
             Toast.makeText(context, "Erreur de connexion", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void sendArrayList(ArrayList<Drink> drinks) {
+        if (connectedThread !=null) {
+            Gson gson = new Gson();
+            String json = gson.toJson(drinks);
+            connectedThread.write(json.getBytes());
+        } else {
+            Toast.makeText(context, "Aucune connexion Bluetooth", Toast.LENGTH_SHORT).show();
         }
     }
 
